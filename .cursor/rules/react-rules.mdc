@@ -1,0 +1,360 @@
+---
+alwaysApply: false
+---
+1. Overview & Core Philosophy
+   This document outlines the development standards and best practices for the React Skills Test project. The primary goal is to produce code that is clean, consistent, readable, and maintainable. We prioritize clarity and modern React patterns.
+
+2. Core Technologies
+   Language: TypeScript
+
+Framework: React 18+ (using Vite for project setup)
+
+Routing: React Router (react-router-dom)
+
+Styling: Tailwind CSS
+
+API Calls: Axios (with a consideration for TanStack Query for advanced server state management)
+
+Linting/Formatting: ESLint & Prettier
+
+3. Language: TypeScript (.ts/.tsx)
+   We will use TypeScript to ensure type safety, improve developer experience with better autocompletion, and catch potential bugs at compile time.
+
+Rules:
+
+Strict Typing: Enable strict mode in tsconfig.json.
+
+Explicit Types:
+
+Define types or interfaces for all API response objects (e.g., Post, Comment).
+
+All function parameters and return values should be typed.
+
+Use TypeScript interfaces for component prop definitions (e.g., interface PostCardProps { ... }).
+
+Avoid any: The use of the any type is strongly discouraged. If an escape hatch is needed, prefer unknown and perform type checking.
+
+Example Post type:
+
+TypeScript
+
+// src/types/index.ts
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+export interface Comment {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
+
+Of course. That's an excellent and highly professional approach. Creating a set of guidelines, sometimes called a "Contribution Guide" or "Style Guide," is a best practice that ensures consistency, quality, and maintainability, especially when working with AI coding assistants or in a team.
+
+Here is a comprehensive set of rules and guidelines tailored for your React project. You can save this as a GUIDELINES.md or CONTRIBUTING.md file in the root of your project. This will serve as a "contract" for how you, and any tool you use, should write code for this project.
+
+Project Guidelines: React Skills Test App
+1. Overview & Core Philosophy
+This document outlines the development standards and best practices for the React Skills Test project. The primary goal is to produce code that is clean, consistent, readable, and maintainable. We prioritize clarity and modern React patterns.
+
+2. Core Technologies
+Language: TypeScript
+
+Framework: React 18+ (using Vite for project setup)
+
+Routing: React Router (react-router-dom)
+
+Styling: Tailwind CSS
+
+API Calls: Axios (with a consideration for TanStack Query for advanced server state management)
+
+Linting/Formatting: ESLint & Prettier
+
+3. Language: TypeScript (.ts/.tsx)
+We will use TypeScript to ensure type safety, improve developer experience with better autocompletion, and catch potential bugs at compile time.
+
+Rules:
+
+Strict Typing: Enable strict mode in tsconfig.json.
+
+Explicit Types:
+
+Define types or interfaces for all API response objects (e.g., Post, Comment).
+
+All function parameters and return values should be typed.
+
+Use TypeScript interfaces for component prop definitions (e.g., interface PostCardProps { ... }).
+
+Avoid any: The use of the any type is strongly discouraged. If an escape hatch is needed, prefer unknown and perform type checking.
+
+Example Post type:
+
+TypeScript
+
+// src/types/index.ts
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+export interface Comment {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
+4. Code Style & Formatting (ESLint & Prettier)
+We enforce a consistent code style automatically using ESLint for code quality rules and Prettier for code formatting.
+
+Setup:
+
+When setting up Vite, choose the React + TypeScript + SWC template which includes a basic ESLint setup.
+
+Install Prettier and plugins:
+
+Bash
+
+npm install --save-dev prettier eslint-config-prettier prettier-plugin-tailwindcss
+Create a .prettierrc file in the project root:
+
+JSON
+
+{
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
+Update your .eslintrc.cjs to integrate Prettier (this disables ESLint rules that conflict with Prettier):
+
+JavaScript
+
+module.exports = {
+  // ... existing config
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'prettier', // Add this last
+  ],
+  // ...
+}
+
+Of course. That's an excellent and highly professional approach. Creating a set of guidelines, sometimes called a "Contribution Guide" or "Style Guide," is a best practice that ensures consistency, quality, and maintainability, especially when working with AI coding assistants or in a team.
+
+Here is a comprehensive set of rules and guidelines tailored for your React project. You can save this as a GUIDELINES.md or CONTRIBUTING.md file in the root of your project. This will serve as a "contract" for how you, and any tool you use, should write code for this project.
+
+Project Guidelines: React Skills Test App
+1. Overview & Core Philosophy
+This document outlines the development standards and best practices for the React Skills Test project. The primary goal is to produce code that is clean, consistent, readable, and maintainable. We prioritize clarity and modern React patterns.
+
+2. Core Technologies
+Language: TypeScript
+
+Framework: React 18+ (using Vite for project setup)
+
+Routing: React Router (react-router-dom)
+
+Styling: Tailwind CSS
+
+API Calls: Axios (with a consideration for TanStack Query for advanced server state management)
+
+Linting/Formatting: ESLint & Prettier
+
+3. Language: TypeScript (.ts/.tsx)
+We will use TypeScript to ensure type safety, improve developer experience with better autocompletion, and catch potential bugs at compile time.
+
+Rules:
+
+Strict Typing: Enable strict mode in tsconfig.json.
+
+Explicit Types:
+
+Define types or interfaces for all API response objects (e.g., Post, Comment).
+
+All function parameters and return values should be typed.
+
+Use TypeScript interfaces for component prop definitions (e.g., interface PostCardProps { ... }).
+
+Avoid any: The use of the any type is strongly discouraged. If an escape hatch is needed, prefer unknown and perform type checking.
+
+Example Post type:
+
+TypeScript
+
+// src/types/index.ts
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+export interface Comment {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
+4. Code Style & Formatting (ESLint & Prettier)
+We enforce a consistent code style automatically using ESLint for code quality rules and Prettier for code formatting.
+
+Setup:
+
+When setting up Vite, choose the React + TypeScript + SWC template which includes a basic ESLint setup.
+
+Install Prettier and plugins:
+
+Bash
+
+npm install --save-dev prettier eslint-config-prettier prettier-plugin-tailwindcss
+Create a .prettierrc file in the project root:
+
+JSON
+
+{
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
+Update your .eslintrc.cjs to integrate Prettier (this disables ESLint rules that conflict with Prettier):
+
+JavaScript
+
+module.exports = {
+  // ... existing config
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'prettier', // Add this last
+  ],
+  // ...
+}
+Rules:
+
+All code must be formatted with Prettier before committing. Consider setting up format-on-save in your editor.
+
+Address all ESLint warnings. Do not disable rules inline unless absolutely necessary, and include a comment explaining why.
+
+5. Styling: Tailwind CSS
+We use Tailwind CSS for a utility-first styling approach. This keeps styling co-located with the markup, promotes consistency, and speeds up development.
+
+Setup:
+
+Follow the official Tailwind CSS with Vite guide.
+
+Rules:
+
+Utility-First: Prefer using utility classes directly in your JSX over creating custom CSS classes with @apply.
+
+Good: <div className="p-4 bg-white rounded-lg shadow-md">...</div>
+
+Avoid: Creating a .my-card { @apply p-4 bg-white rounded-lg shadow-md; } unless the component is complex and used in many places.
+
+Theme Configuration: Define project-specific colors, fonts, and spacing in tailwind.config.js. Do not use magic numbers or hard-coded colors in your classes.
+
+JavaScript
+
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#3490dc',
+        secondary: '#ffed4a',
+        danger: '#e3342f',
+      },
+    },
+  },
+  // ...
+}
+Responsiveness: Use Tailwind's responsive prefixes (sm:, md:, lg:) to ensure the layout works on all screen sizes. Design mobile-first.
+
+6. Project & Component Structure
+A clear folder structure is essential for navigation and scalability.
+
+Folder Structure:
+
+/src
+├── /api          # Centralized API call functions
+├── /components   # Reusable "dumb" UI components
+├── /hooks        # Custom React hooks
+├── /pages        # "Smart" components that represent routes/pages
+├── /types        # TypeScript type definitions
+└── App.tsx       # Root component with routing
+Component Design Rules:
+
+Pages vs. Components:
+
+/pages: Components in this folder manage their own data fetching and state. They correspond to a route.
+
+/components: These are reusable UI components. They should be "dumb"—meaning they receive all data and functions via props and do not fetch their own data.
+
+Single Responsibility: Each component should do one thing well. A PostCard should only display a post, not fetch it.
+
+Props-Driven: Components should be configurable via props. Use TypeScript interfaces for prop types.
+
+File Naming: Use PascalCase for component files (e.g., PostCard.tsx).
+
+7. State Management
+Rules:
+
+Local State: Use useState for simple component-level state (e.g., form inputs, toggles).
+
+Server Cache State: For this project, a combination of useState, useEffect for fetching, and props drilling is sufficient.
+
+For a more advanced approach (to impress): Use TanStack Query (React Query). It is the industry standard for managing server state. It handles caching, background refetching, and eliminates complex useEffect logic. If you use it, abstract your queries into custom hooks (e.g., usePosts(), usePost(id)).
+
+Lifting State Up: When multiple components need access to the same state, lift it to their closest common ancestor.
+
+8. API Layer
+Rules:
+
+Centralize API Logic: All axios calls should reside in the /src/api folder. This makes them easy to find, mock, and modify.
+
+Create an Axios Instance: Create a reusable Axios instance to set a base URL and headers.
+
+Example api.ts:
+
+TypeScript
+
+// src/api/api.ts
+import axios from 'axios';
+
+export const apiClient = axios.create({
+  baseURL: 'https://jsonplaceholder.typicode.com',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+9. Git & Commit Messages
+Branching: Create a new feature branch for each distinct task (e.g., feat/display-posts, feat/search-bar).
+
+Conventional Commits: All commit messages must follow the Conventional Commits specification. This makes the Git history readable and allows for automated changelog generation.
+
+Format: <type>[optional scope]: <description>
+
+Types: feat (new feature), fix (bug fix), docs (documentation), style (formatting, styling), refactor, chore (build tasks, package updates).
+
+Example Commits:
+
+feat: Add posts list page with data fetching
+
+fix: Prevent form submission on enter key press
+
+style: Format codebase with Prettier
+
+docs: Create initial project guidelines file
