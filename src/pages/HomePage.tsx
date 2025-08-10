@@ -7,7 +7,7 @@ import PostCard from '../components/PostCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 
-const PostsList: React.FC = () => {
+const HomePage: React.FC = () => {
   const { posts, loading, error, refreshPosts } = usePostsContext();
   const [searchTerm, setSearchTerm] = useState<string>('');
   const navigate = useNavigate();
@@ -137,4 +137,4 @@ const PostsList: React.FC = () => {
   );
 };
 
-export default PostsList;
+export default HomePage;

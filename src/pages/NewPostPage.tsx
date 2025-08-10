@@ -5,7 +5,7 @@ import type { NewPost, ApiError } from '../types';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 
-const AddPost: React.FC = () => {
+const NewPostPage: React.FC = () => {
   const navigate = useNavigate();
   const { addPost } = usePostsContext();
   const [formData, setFormData] = useState<NewPost>({
@@ -246,4 +246,4 @@ const AddPost: React.FC = () => {
   );
 };
 
-export default AddPost;
+export default NewPostPage;

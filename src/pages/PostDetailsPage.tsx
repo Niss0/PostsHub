@@ -7,7 +7,7 @@ import CommentCard from '../components/CommentCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 
-const PostDetails: React.FC = () => {
+const PostDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { posts } = usePostsContext();
@@ -214,4 +214,4 @@ const PostDetails: React.FC = () => {
   );
 };
 
-export default PostDetails;
+export default PostDetailsPage;
